@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extra.css">
+    <title>Cabañas Cielo Azul | Alojamiento al Aire Libre</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container header-inner">
+            <nav class="navbar" aria-label="Barra principal de navegación">
+                <div class="logo">
+                    <span>🏡 Cabañas Cielo Azul</span>
+                </div>
+                <ul class="navbar__list">
+                    <li><a href="#home" aria-label="Ir al inicio">Inicio</a></li>
+                    <li><a href="#cabanas" aria-label="Ver nuestras cabañas">Cabañas</a></li>
+                    <li><a href="#ubication" aria-label="Ubicación">Ubicación</a></li>
+                    <li><a href="#reservations" aria-label="Reservas">Reservas</a></li>
+                </ul>
+            </nav>
+            <button class="menu-btn" aria-label="Menú móvil" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop" alt="Cabañas Cielo Azul en la naturaleza al atardecer" style="width:100%; height:450px; object-fit:cover;" loading="lazy">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Cabañas Cielo Azul</h1>
+                <p>Descubre la naturaleza en nuestras cabañas acogedoras, con piscina, wifi y todo lo necesario para una estancia inolvidable.</p>
+                <a href="#cabanas" class="btn btn-primary btn-large">Ver nuestras cabañas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CABAÑAS ===== -->
+    <section id="cabanas" class="container">
+        <h2>Nuestras Cabañas</h2>
+        <div class="cabins">
+
+        <article class="cabin-card card" data-id="1" data-capacity="4" data-price="45000" data-pets="true">
+            <div class="cabin-image">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop" alt="Cabaña N°1 - Interior acogedor con chimenea" style="width:100%; height:auto;" loading="lazy">
+            </div>
+            <div class="cabin-info">
+                <h3>Cabaña N°1</h3>
+                <p class="cabin-capacity">👥 Hasta 4 personas</p>
+                <div class="cabin-badges">
+                    <span class="badge badge-pets">🐾 Mascotas permitidas</span>
+                    <span class="badge badge-wifi">Wifi</span>
+                </div>
+                <p class="cabin-desc">Cabaña de madera con chimenea, ideal para familias. Dormitorio matrimonial + sofá cama, baño completo y cocina equipada.</p>
+                <div class="cabin-price">
+                    <span class="price-night">$45.000 <small>/noche</small></span>
+                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°1">Reservar</button>
+                </div>
+            </div>
+        </article>
+        
+        <article class="cabin-card card" data-id="2" data-capacity="6" data-price="60000" data-pets="false">
+            <div class="cabin-image">
+                <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&h=300&fit=crop" alt="Cabaña N°2 - Amplia con terraza y vista al bosque" style="width:100%; height:auto;" loading="lazy">
+            </div>
+            <div class="cabin-info">
+                <h3>Cabaña N°2</h3>
+                <p class="cabin-capacity">👥 Hasta 6 personas</p>
+                <div class="cabin-badges">
+                    <span class="badge badge-grande">🏕️ Grande</span>
+                </div>
+                <p class="cabin-desc">Nuestra cabaña más grande, con 2 dormitorios, terraza con parrilla privada y vista al bosque. Ideal para grupos.</p>
+                <div class="cabin-price">
+                    <span class="price-night">$60.000 <small>/noche</small></span>
+                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°2">Reservar</button>
+                </div>
+            </div>
+        </article>
+        
+        <article class="cabin-card card" data-id="3" data-capacity="2" data-price="35000" data-pets="true">
+            <div class="cabin-image">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop" alt="Cabaña N°3 - Acogedora para parejas" style="width:100%; height:auto;" loading="lazy">
+            </div>
+            <div class="cabin-info">
+                <h3>Cabaña N°3</h3>
+                <p class="cabin-capacity">👥 Hasta 2 personas</p>
+                <div class="cabin-badges">
+                    <span class="badge badge-pets">🐾 Mascotas</span>
+                    <span class="badge badge-romantico">❤️ Romántica</span>
+                </div>
+                <p class="cabin-desc">Cabaña romántica tipo estudio, perfecta para parejas. Jacuzzi privado, chimenea y vista al jardín.</p>
+                <div class="cabin-price">
+                    <span class="price-night">$35.000 <small>/noche</small></span>
+                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°3">Reservar</button>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+    </section>
+
+    <!-- ===== EXPERIENCE / AMENITIES ===== -->
+    <section id="experience" class="experience container">
+        <h2>Experiencia</h2>
+        
+        <div class="experience__content">
+            <h3>¿Qué incluye tu estadía?</h3>
+            
+            <div class="amenities">
+                
+                <div class="amenity-card card">
+                    <h3>En la cabaña</h3>
+                    <ul>
+                        <li><span class="icon-check">✓</span> Aire acondicionado</li>
+                        <li><span class="icon-check">✓</span> Wifi</li>
+                        <li><span class="icon-check">✓</span> Calefacción a gas</li>
+                        <li><span class="icon-check">✓</span> TV Smart 32"</li>   
+                    </ul>
+                </div>
+                
+                <div class="amenity-card card">
+                    <h3>En el complejo</h3>
+                    <ul>
+                        <li><span class="icon-check">✓</span> Piscina 15 x 6 mts</li>
+                        <li><span class="icon-check">✓</span> Quincho con mesa y sillas</li>
+                        <li><span class="icon-check">✓</span> Estacionamiento cubierto</li>
+                        <li><span class="icon-check">✓</span> Reposeras exteriores</li>   
+                    </ul>
+                </div>
+                
+                <div class="amenity-card card">
+                    <h3>Servicios adiciónales</h3>
+                    <ul>
+                        <li><span class="icon-check">✓</span> Cuna y colchón</li>
+                        <li><span class="icon-check">✓</span> Silla de bebé</li>
+                        <li><span class="icon-check">✓</span> Bañera</li>
+                        <li><span class="icon-check">✓</span> Ropa de blanco para bebé</li>
+                    </ul>
+                </div>
+                
+                <div class="amenity-card card">
+                    <h3>A tener en cuenta</h3>
+                    <p>TV satelital con recarga a cargo del huésped. No se incluye desayuno. Se aceptan mascotas pequeñas con consulta previa y tarifa adicional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section id="reviews" class="reviews container">
+        <h2>Opiniones de nuestros huéspedes</h2>
+        
+        <div class="reviews__list">
+            <article class="review-card card">
+                <h4>Juan Bazquez</h4>
+                <p>La verdad es una cabaña con mucha madera, estoy contento porque me gusta la madera.</p>
+            </article>
+
+            <article class="review-card card">
+                <h4>Ezequiel Gomez</h4>
+                <p>Me gusta que tenga piscina, porque me gustan las piscinas.</p>
+            </article>
+
+            <article class="review-card card">
+                <h4>Victor Maidana</h4>
+                <p>Valoro que tengan parrilla, en mi familia solo comemos carne.</p>
+            </article>
+        </div>
+        <a href="#" class="btn-link">Ver todas las reseñas →</a>
+    </section>
+
+    <!-- ===== UBICATION ===== -->
+    <section id="ubication" class="container">
+        <h3>Ubicación</h3>
+        <div class="location">
+            <div class="location-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.46!2d-66.3154!3d-26.3014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDIyJzU2LjAiTiA2NsKwNTYnNDIuMCJX!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="location-info">
+                <p><strong>Dirección:</strong> Calle Siempre Viva 3214, La Paz, Argentina</p>
+                <p><strong>Teléfono:</strong> +54 343 700-0000</p>
+                <p><strong>Email:</strong> reservas@cabancielazul.com.ar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVAS ===== -->
+    <section id="reservations" class="container">
+        <h3>Reservas</h3>
+        <div class="whatsapp-reserve">
+            <a href="https://wa.me/543437000000?text=Hola%20Cabañas%20Cielo%20Azul,%20me%20interesa%20reservar%20una%20cabaña." target="_blank" class="btn btn-primary btn-block">
+                📲 Reservar por WhatsApp
+            </a>
+            <p>Indica fechas, cantidad de huéspedes y la cabaña que te interesa.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <div class="container footer-inner">
+            <div class="footer-content">
+            <div class="footer-contacts">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>📞 +54 3437000000</li>
+                    <li><a href="https://instagram.com/cabancielazul" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://facebook.com/cabancielazul" target="_blank" rel="noopener">Facebook</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bookings">
+                <h4>Reservas</h4>
+                <p>Consulta disponibilidad indicando fechas, cantidad de huéspedes y la cabaña que te interesa.</p>
+                <p>¡Reserva ahora y disfruta de una experiencia inolvidable en Cabañas Cielo Azul!</p>
+            </div>
+            
+            <div class="footer-address">
+                <h4>Ubicación</h4>
+                <address>
+                    <p>📍 Calle Siempre Viva 3214</p>
+                    <p>La Paz, Argentina</p>
+                    <p>C.P.: 5700</p>
+                    <p><a href="https://maps.app.goo.gl/example" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+                </address>
+            </div>
+        </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>© 2026 Cabañas Cielo Azul. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
