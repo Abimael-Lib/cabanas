@@ -193,7 +193,6 @@ img {
 /* HERO */
 .hero {
     position: relative;
-    margin-top: 1rem;
     overflow: hidden;
     border-radius: 0;
     background: var(--dark-green);
