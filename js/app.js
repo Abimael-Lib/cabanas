@@ -1,4 +1,4 @@
-/* Cabanas San Luis - Interactividad */
+/* Cabanas Cielo Azul - Interactividad */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -45,25 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
         3: 'Cabaña N°3'
     };
 
-    // Añadir labels de accesibilidad a los botones de reserva
-    document.querySelectorAll('.btn[data-cabin]').forEach(btn => {
-        const cabinId = btn.getAttribute('data-cabin');
-        const cabinName = cabins[cabinId] || 'Cabaña';
-        btn.setAttribute('aria-label', `Reservar ${cabinName}`);
-    });
-
     document.querySelectorAll('.btn[data-cabin]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const cabinId = btn.getAttribute('data-cabin');
             const cabinName = cabins[cabinId] || 'Cabaña';
-            const message = `Hola Cabañas San Luis, me interesa reservar la ${cabinName}. ¿Podrían darme disponibilidad?`;
+            const message = `Hola Cabañas Cielo Azul, me interesa reservar la ${cabinName}. ¿Podrían darme disponibilidad?`;
             const url = `https://wa.me/543437000000?text=${encodeURIComponent(message)}`;
 
-            // Confirmación al usuario antes de abrir WhatsApp
-            confirm(`Desea reservar la ${cabinName}? Por favor indique fechas y número de huéspedes.`);
-
-            window.open(url, '_blank');
+            if (confirm(`Desea reservar la ${cabinName}? Por favor indique fechas y número de huéspedes.`)) {
+                window.open(url, '_blank');
+            }
         });
     });
 
@@ -95,8 +87,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.cabin-card, .amenity-card, .review-card, .location-info, .whatsapp-reserve').forEach(el => {
+    document.querySelectorAll('.cabin-card, .amenity-card, .gallery__item, .location-info, .contact-card').forEach(el => {
         observer.observe(el);
     });
+
+    /* ===== GALERÍA: LIGHTBOX ===== */
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        const lbImg = document.getElementById('lightbox-img');
+        const lbClose = lightbox.querySelector('.lightbox__close');
+        let lastTrigger = null;
+
+        const openLightbox = (src, alt, trigger) => {
+            lastTrigger = trigger;
+            lbImg.src = src;
+            lbImg.alt = alt;
+            lightbox.hidden = false;
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            lbClose.focus();
+        };
+
+        const closeLightbox = () => {
+            lightbox.hidden = true;
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+            if (lastTrigger) {
+                lastTrigger.focus();
+                lastTrigger = null;
+            }
+        };
+
+        document.querySelectorAll('.gallery__item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                openLightbox(item.dataset.full || img.src, img.alt, item);
+            });
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+
+        // Cerrar al hacer clic fuera de la imagen (fondo)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.hidden && e.key === 'Escape') closeLightbox();
+        });
+    }
 
 });

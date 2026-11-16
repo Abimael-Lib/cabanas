@@ -15,15 +15,22 @@
     <header class="header">
         <div class="container header-inner">
             <nav class="navbar" aria-label="Barra principal de navegación">
-                <div class="logo">
+                <a class="logo" href="#home" aria-label="Cabañas Cielo Azul - Ir al inicio">
+                    <img class="logo__img" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=120&q=80" alt="Cabañas Cielo Azul entre montañas" width="56" height="56" loading="eager">
                     <span>Cabañas Cielo Azul</span>
-                </div>
-                <ul class="navbar__list">
+                </a>
+                <ul class="navbar__list" id="nav-list">
                     <li><a href="#home" aria-label="Ir al inicio">Inicio</a></li>
                     <li><a href="#cabanas" aria-label="Ver nuestras cabañas">Cabañas</a></li>
+                    <li><a href="#services" aria-label="Ver servicios">Servicios</a></li>
+                    <li><a href="#galeria" aria-label="Ver galería">Galería</a></li>
                     <li><a href="#ubication" aria-label="Ubicación">Ubicación</a></li>
-                    <li><a href="#reservations" aria-label="Reservas">Reservas</a></li>
+                    <li><a href="#contacto" aria-label="Contacto y reservas">Contacto</a></li>
                 </ul>
+                <a class="btn btn-whatsapp header__whatsapp" href="https://wa.me/543437000000?text=Hola%20Cabanas%20Cielo%20Azul%2C%20me%20interesa%20reservar%20una%20cabana." target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2.05 22l4.24-1.11c1.73.94 3.68 1.44 5.75 1.44h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15h-.01c-1.8 0-3.57-.48-5.11-1.4l-.37-.22-2.51.66.67-2.45-.24-.4a8.144 8.144 0 0 1-1.26-4.4c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.43a8.19 8.19 0 0 1 2.41 5.83c-.01 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.24-.64.8-.78.96-.14.17-.29.19-.54.07-.25-.13-1.05-.38-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.01-.37.11-.49.11-.11.25-.29.37-.43.12-.15.16-.24.25-.4.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.76 2.68 4.26 3.76.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.17-.06-.1-.23-.15-.48-.27z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
             </nav>
             <button class="menu-btn" aria-label="Menú móvil" aria-expanded="false">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -37,12 +44,11 @@
 
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop" alt="Cabañas Cielo Azul en la naturaleza al atardecer" style="width:100%; height:450px; object-fit:cover;" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1800&q=80" alt="Complejo Cabañas Cielo Azul rodeado de naturaleza" style="width:100%; height:450px; object-fit:cover;" loading="eager">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1>Cabañas Cielo Azul</h1>
-                <p>Descubre la naturaleza en nuestras cabañas acogedoras, con piscina, wifi y todo lo necesario para una estancia inolvidable.</p>
-                <a href="#cabanas" class="btn btn-primary btn-large">Ver nuestras cabañas</a>
+                <p class="hero-location">Calle Siempre Viva 3214, La Paz, Argentina</p>
             </div>
         </div>
     </section>
@@ -66,7 +72,7 @@
                 <p class="cabin-desc">Cabaña de madera con chimenea, ideal para familias. Dormitorio matrimonial + sofá cama, baño completo y cocina equipada.</p>
                 <div class="cabin-price">
                     <span class="price-night">$45.000 <small>/noche</small></span>
-                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°1">Reservar</button>
+                    <button class="btn btn-primary" data-cabin="1" aria-label="Reservar Cabaña N°1">Reservar</button>
                 </div>
             </div>
         </article>
@@ -84,7 +90,7 @@
                 <p class="cabin-desc">Nuestra cabaña más grande, con 2 dormitorios, terraza con parrilla privada y vista al bosque. Ideal para grupos.</p>
                 <div class="cabin-price">
                     <span class="price-night">$60.000 <small>/noche</small></span>
-                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°2">Reservar</button>
+                    <button class="btn btn-primary" data-cabin="2" aria-label="Reservar Cabaña N°2">Reservar</button>
                 </div>
             </div>
         </article>
@@ -103,7 +109,7 @@
                 <p class="cabin-desc">Cabaña romántica tipo estudio, perfecta para parejas. Jacuzzi privado, chimenea y vista al jardín.</p>
                 <div class="cabin-price">
                     <span class="price-night">$35.000 <small>/noche</small></span>
-                    <button class="btn btn-primary" aria-label="Reservar Cabaña N°3">Reservar</button>
+                    <button class="btn btn-primary" data-cabin="3" aria-label="Reservar Cabaña N°3">Reservar</button>
                 </div>
             </div>
         </article>
@@ -111,37 +117,36 @@
     </div>
     </section>
 
-    <!-- ===== EXPERIENCE / AMENITIES ===== -->
-    <section id="experience" class="experience container">
-        <h2>Experiencia</h2>
-        
+    <!-- ===== SERVICIOS ===== -->
+    <section id="services" class="experience container" aria-labelledby="services-title">
+        <h2 id="services-title">Servicios</h2>
+
         <div class="experience__content">
             <h3>¿Qué incluye tu estadía?</h3>
-            
+
             <div class="amenities">
-                
+                <div class="amenity-card card">
+                    <h3>Pileta y exteriores</h3>
+                    <ul>
+                        <li><span class="icon-check">✓</span> Pileta 15 x 6 mts</li>
+                        <li><span class="icon-check">✓</span> Estacionamiento cubierto</li>
+                        <li><span class="icon-check">✓</span> Reposeras exteriores</li>
+                        <li><span class="icon-check">✓</span> Quincho con parrilla y mesa</li>
+                    </ul>
+                </div>
+
                 <div class="amenity-card card">
                     <h3>En la cabaña</h3>
                     <ul>
                         <li><span class="icon-check">✓</span> Aire acondicionado</li>
-                        <li><span class="icon-check">✓</span> Wifi</li>
+                        <li><span class="icon-check">✓</span> Wi-Fi</li>
                         <li><span class="icon-check">✓</span> Calefacción a gas</li>
-                        <li><span class="icon-check">✓</span> TV Smart 32"</li>   
+                        <li><span class="icon-check">✓</span> TV Smart 32"</li>
                     </ul>
                 </div>
-                
+
                 <div class="amenity-card card">
-                    <h3>En el complejo</h3>
-                    <ul>
-                        <li><span class="icon-check">✓</span> Piscina 15 x 6 mts</li>
-                        <li><span class="icon-check">✓</span> Quincho con mesa y sillas</li>
-                        <li><span class="icon-check">✓</span> Estacionamiento cubierto</li>
-                        <li><span class="icon-check">✓</span> Reposeras exteriores</li>   
-                    </ul>
-                </div>
-                
-                <div class="amenity-card card">
-                    <h3>Servicios adiciónales</h3>
+                    <h3>Servicios adicionales</h3>
                     <ul>
                         <li><span class="icon-check">✓</span> Cuna y colchón</li>
                         <li><span class="icon-check">✓</span> Silla de bebé</li>
@@ -149,7 +154,7 @@
                         <li><span class="icon-check">✓</span> Ropa de blanco para bebé</li>
                     </ul>
                 </div>
-                
+
                 <div class="amenity-card card">
                     <h3>A tener en cuenta</h3>
                     <p>TV satelital con recarga a cargo del huésped. No se incluye desayuno. Se aceptan mascotas pequeñas con consulta previa y tarifa adicional.</p>
@@ -158,32 +163,36 @@
         </div>
     </section>
 
-    <!-- ===== REVIEWS ===== -->
-    <section id="reviews" class="reviews container">
-        <h2>Opiniones de nuestros huéspedes</h2>
-        
-        <div class="reviews__list">
-            <article class="review-card card">
-                <h4>Juan Bazquez</h4>
-                <p>La verdad es una cabaña con mucha madera, estoy contento porque me gusta la madera.</p>
-            </article>
+    <!-- ===== GALERÍA ===== -->
+    <section id="galeria" class="container" aria-labelledby="galeria-title">
+        <h2 id="galeria-title">Galería</h2>
+        <p class="section-subtitle">Fotografías del complejo y sus alrededores.</p>
 
-            <article class="review-card card">
-                <h4>Ezequiel Gomez</h4>
-                <p>Me gusta que tenga piscina, porque me gustan las piscinas.</p>
-            </article>
-
-            <article class="review-card card">
-                <h4>Victor Maidana</h4>
-                <p>Valoro que tengan parrilla, en mi familia solo comemos carne.</p>
-            </article>
+        <div class="gallery">
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: cabaña entre pinos">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="Cabaña de madera entre pinos" loading="lazy">
+            </button>
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: vista del lago rodeado de montañas">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Vista del lago rodeado de montañas" loading="lazy">
+            </button>
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: pileta del complejo">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" alt="Pileta del complejo con reposeras" loading="lazy">
+            </button>
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: sendero en el bosque">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="Sendero entre árboles del bosque" loading="lazy">
+            </button>
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: luz del atardecer en el bosque">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80" alt="Luz del atardecer filtrándose entre los árboles" loading="lazy">
+            </button>
+            <button class="gallery__item" type="button" data-full="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1600&q=85" aria-label="Ampliar foto: vista del complejo desde el jardín">
+                <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=800&q=80" alt="Vista del complejo desde el jardín" loading="lazy">
+            </button>
         </div>
-        <a href="#" class="btn-link">Ver todas las reseñas →</a>
     </section>
 
     <!-- ===== UBICATION ===== -->
-    <section id="ubication" class="container">
-        <h3>Ubicación</h3>
+    <section id="ubication" class="container" aria-labelledby="ubication-title">
+        <h2 id="ubication-title">Ubicación</h2>
         <div class="location">
             <div class="location-map">
                 <iframe 
@@ -198,14 +207,23 @@
         </div>
     </section>
 
-    <!-- ===== RESERVAS ===== -->
-    <section id="reservations" class="container">
-        <h3>Reservas</h3>
-        <div class="whatsapp-reserve">
-            <a href="https://wa.me/543437000000?text=Hola%20Cabañas%20Cielo%20Azul,%20me%20interesa%20reservar%20una%20cabaña." target="_blank" class="btn btn-primary btn-block">
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="container" aria-labelledby="contacto-title">
+        <h2 id="contacto-title">Contacto</h2>
+
+        <div class="contact-card">
+            <a class="btn btn-whatsapp btn-large btn-block" href="https://wa.me/543437000000?text=Hola%20Cabanas%20Cielo%20Azul%2C%20me%20interesa%20reservar%20una%20cabana." target="_blank" rel="noopener" aria-label="Escribirnos por WhatsApp para reservar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2.05 22l4.24-1.11c1.73.94 3.68 1.44 5.75 1.44h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15h-.01c-1.8 0-3.57-.48-5.11-1.4l-.37-.22-2.51.66.67-2.45-.24-.4a8.144 8.144 0 0 1-1.26-4.4c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.43a8.19 8.19 0 0 1 2.41 5.83c-.01 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.24-.64.8-.78.96-.14.17-.29.19-.54.07-.25-.13-1.05-.38-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.01-.37.11-.49.11-.11.25-.29.37-.43.12-.15.16-.24.25-.4.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.76 2.68 4.26 3.76.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.17-.06-.1-.23-.15-.48-.27z"/></svg>
                 Reservar por WhatsApp
             </a>
-            <p>Indica fechas, cantidad de huéspedes y la cabaña que te interesa.</p>
+
+            <ul class="contact-list">
+                <li><strong>Teléfono:</strong> <a href="tel:+543437000000">+54 343 700-0000</a></li>
+                <li><strong>Email:</strong> <a href="mailto:reservas@cabancielazul.com.ar">reservas@cabancielazul.com.ar</a></li>
+                <li><strong>Instagram:</strong> <a href="https://instagram.com/cabancielazul" target="_blank" rel="noopener" aria-label="Instagram de Cabañas Cielo Azul">@cabancielazul</a></li>
+                <li><strong>Facebook:</strong> <a href="https://facebook.com/cabancielazul" target="_blank" rel="noopener" aria-label="Facebook de Cabañas Cielo Azul">cabancielazul</a></li>
+                <li><strong>Dirección:</strong> Calle Siempre Viva 3214, La Paz, Argentina, C.P. 5700</li>
+            </ul>
         </div>
     </section>
 
@@ -216,7 +234,7 @@
             <div class="footer-contacts">
                 <h4>Contacto</h4>
                 <ul>
-                    <li>+54 3437000000</li>
+                    <li>+54 343 700-0000</li>
                     <li><a href="https://instagram.com/cabancielazul" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="https://facebook.com/cabancielazul" target="_blank" rel="noopener">Facebook</a></li>
                 </ul>
@@ -244,6 +262,14 @@
             <p>© 2026 Cabañas Cielo Azul. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotos de la galería" aria-hidden="true" hidden>
+        <button class="lightbox__close" type="button" aria-label="Cerrar visor de fotos">×</button>
+        <figure class="lightbox__figure">
+            <img id="lightbox-img" class="lightbox__img" src="" alt="">
+        </figure>
+    </div>
 
     <script src="js/app.js" defer></script>
 </body>
