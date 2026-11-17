@@ -45,14 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
         3: 'Cabaña N°3'
     };
 
+    const cabinMessages = {
+        1: 'Hola Cabañas Cielo Azul, me interesa reservar la Cabaña N°1 para [número de personas] y fechas [fecha de llegada] a [fecha de salida].',
+        2: 'Hola Cabañas Cielo Azul, me interesa reservar la Cabaña N°2 para [número de personas] y fechas [fecha de llegada] a [fecha de salida].',
+        3: 'Hola Cabañas Cielo Azul, me interesa reservar la Cabaña N°3 para [número de personas] y fechas [fecha de llegada] a [fecha de salida].'
+    };
+
     document.querySelectorAll('.btn[data-cabin]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const cabinId = btn.getAttribute('data-cabin');
             const cabinName = cabins[cabinId] || 'Cabaña';
-            const message = `Hola Cabañas Cielo Azul, me interesa reservar la ${cabinName}. ¿Podrían darme disponibilidad?`;
+            const messageTemplate = cabinMessages[cabinId] || `Hola Cabañas Cielo Azul, me interesa reservar la ${cabinName}. ¿Podrían darme disponibilidad?`;
+            
+            const message = messageTemplate;
             const url = `https://wa.me/543437000000?text=${encodeURIComponent(message)}`;
-
+            
             if (confirm(`Desea reservar la ${cabinName}? Por favor indique fechas y número de huéspedes.`)) {
                 window.open(url, '_blank');
             }
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.cabin-card, .amenity-card, .gallery__item, .location-info, .contact-card').forEach(el => {
+    document.querySelectorAll('.cabin-card, .amenity-card, .gallery__item, .location-info, .contact-card, .testimonial').forEach(el => {
         observer.observe(el);
     });
 
